@@ -1,0 +1,142 @@
+{
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "swagger": "2.0",
+    "info": {
+        "description": "`gf-api` api demo 接口文档。",
+        "title": "`gf-api` 基于 GF(Go Frame) api demo",
+        "contact": {},
+        "version": "1.0"
+    },
+    "paths": {
+        "/user/add": {
+            "post": {
+                "description": "添加用户。",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "用户"
+                ],
+                "summary": "添加用户",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "format": "string",
+                        "example": "https://www.baidu.com/img/flexible/logo/pc/result.png",
+                        "name": "avatar",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "format": "string",
+                        "example": "13012345678",
+                        "name": "mobile",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "format": "string",
+                        "example": "张三",
+                        "name": "nickname",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "integer",
+                        "format": "int",
+                        "example": 1,
+                        "name": "sex",
+                        "in": "formData"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/common.JsonResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/common.JsonResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/list": {
+            "post": {
+                "description": "用户列表。",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "用户"
+                ],
+                "summary": "用户列表",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "format": "int",
+                        "example": 1,
+                        "name": "page",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "integer",
+                        "format": "int",
+                        "example": 10,
+                        "name": "pageSize",
+                        "in": "formData"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/common.JsonResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/common.JsonResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "common.JsonResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "description": "返回数据(业务接口定义具体数据结构)",
+                    "type": "object"
+                },
+                "message": {
+                    "description": "提示信息",
+                    "type": "string"
+                },
+                "status": {
+                    "description": "错误码((200:成功, 非200:失败))",
+                    "type": "integer"
+                },
+                "time": {
+                    "description": "返回时间",
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

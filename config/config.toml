@@ -1,0 +1,22 @@
+# HTTP Server
+[server]
+	Address     = ":8199"
+	ServerRoot  = "public"
+	ServerAgent = "gf-api"
+	LogPath     = "runtime/gf-api/server"
+
+# Logger.
+[logger]
+    Path        = "runtime/gf-api/log"
+    Level       = "all"
+    Stdout      = true
+
+# Database.
+[database]
+    link  = "mysql:root:123456@tcp(127.0.0.1:3306)/gfapi"
+    debug = true
+    # Database logger.
+    [database.logger]
+        Path   = "runtime/gf-api/sql"
+        Level  = "all"
+        Stdout = true

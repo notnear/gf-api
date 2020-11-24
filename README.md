@@ -1,5 +1,5 @@
 # gf-api
-GF(Go Frame) api demo
+GF(Go Frame) api 脚手架
 
 启动 + 自动生成 swagger 
 

@@ -8,7 +8,7 @@ gf run main.go --swagger
 ```
 # gf cli Install
 
-- [安装](https://goframe.org/cli)
+- [安装](https://github.com/gogf/gf-cli)
 
 # swagger
 生成 swagger 文件 
